@@ -43,5 +43,9 @@ public class StringsTema2 {
 
         String frase_reemplazos = frase.replace("palo","Florentino");
         System.out.println(frase_reemplazos);
+
+        String equipo = " Real Madrid";
+        System.out.println(frase.concat(equipo));
+        System.out.println(frase+equipo);
     }
 }
