@@ -19,7 +19,7 @@ public class Ejercicio4_Tema2 {
         int conteo = frase_sin.length();
 
         int resta = texto_tamano - conteo;
-        int resultado = resta /palabra_tamano;
+        int resultado = resta / palabra_tamano;
         System.out.println(resultado);
 
 
