@@ -56,7 +56,7 @@ public class Actividad_Tema2 {
                     return;
                 }
 
-                if (edad>=0){
+                if (edad>=0 && edad <= 125){
                     anyo_nacimiento_int = anyo_actual-edad;
 
 
@@ -86,6 +86,8 @@ public class Actividad_Tema2 {
                 }else{
                     System.out.println("Generación Z");
                 }
+            }else {
+                System.out.println("Introduce un año válido");
             }
         }
 
