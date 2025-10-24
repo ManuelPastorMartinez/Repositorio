@@ -28,14 +28,13 @@ public class Practica3_Tema2 {
 
                 int tamanyo_ISBN = ISBN.length();
                 if (tamanyo_ISBN == 10){
-                    final int COMPROBACIOB_ISBN = tamanyo_ISBN % 11;
-                    if( COMPROBACIOB_ISBN == 0){
-                        System.out.println("El ISBN es válido");
-                    }else {
-                        System.out.println("El ISBN no es válido");
+                    for (int i = 10; i>= 1 ; i++){
+                        int parte1 = 0;
+                        int parte2 = 0;
+                        String trozo_10 = ISBN.
                     }
                 }else {
-                    System.out.println("Por favor introduce un ISBN válido");
+                    System.out.println("Tamaño incorrecto, por favor introduce un ISBN válido");
                 }
 
                 break;
