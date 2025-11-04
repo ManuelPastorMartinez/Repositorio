@@ -38,7 +38,8 @@ public class Practica3_Tema2 {
             switch (opcion) {//aqui haces un switch-case para las distintas opciones.
                 case "1"://en el primer caso lo que hace es comprobar si el ISBN introducido es un ISBN válido o no
                     for (int i = tamanyo_ISBN - 1; i >= 0; i--) {//este for actúa como un bucle para ir revisando todos los números del ISBN uno por uno.
-                        UltimoNumero = ISBN.charAt(i);//esta variable sirve para mirar cuál es el último número.
+                        UltimoNumero = ISBN.charAt(i);
+                        //esta variable sirve para mirar cuál es el último número.
                         if (UltimoNumero == 'x' || UltimoNumero == 'X') {//este if sorve para ver si el último número es una X.
                             UltimaPosicion = 10;//si el último número es una x la última posición tendrá el valor de 10.
                         } else {
