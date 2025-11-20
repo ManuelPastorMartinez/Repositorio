@@ -8,9 +8,9 @@ public class Matrices_Ejercicio2 {
     static void main() {
 
 
-        Random aleatorio = new Random();
+         Random aleatorio = new Random();
 
-        int filas_matriz1 = aleatorio.nextInt(6) + 2;
+        int filas_matriz1 = aleatorio.nextInt(6)+ 2;
 
         int matriz1[][] = {{1,2,3,4},{5,4,6,7},{6,9,10,12}};
 
