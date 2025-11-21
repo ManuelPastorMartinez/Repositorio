@@ -31,8 +31,8 @@ public class Bateria_Matrices_Ejercicio3 {
         }
 
         for (int i = 1; i < notas.length; i++) {
-            for (int n = 0; n < notas[i].length; n++) {
-                System.out.println("Introduce la nota de "+ notas[i][0] + " para la asignatura de "+notas[1][n] + ": ");
+            for (int n = 1; n < notas[i].length; n++) {
+                System.out.println("Introduce la nota de "+ notas[i][0] + " para la asignatura de "+notas[0][n] + ": ");
                 notas[i][n] = teclado.next();
             }
         }
@@ -44,6 +44,22 @@ public class Bateria_Matrices_Ejercicio3 {
             System.out.println();
         }
 
+        int suma_notas=0;
+        for (int i=1;i<notas.length;i++){
+
+            for (int n = 1; n < notas[i].length; n++) {
+                suma_notas+= Integer.parseInt(notas[n][i]);
+            }
+            System.out.println("La nota media de "+notas[i][0] +" es "+ (double) (suma_notas/asignaturas));
+        }
+
+        for (int i = 1; i < notas.length; i++) {
+            suma_notas=0;
+            for (int n = 1; n < notas.length; n++) {
+                suma_notas+=Integer.parseInt(notas[n][i]);
+            }
+            System.out.println("La nota media en "+notas[0][i]+" es "+(double) (suma_notas/alumnos));
+        }
 
     }
 }
