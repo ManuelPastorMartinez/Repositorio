@@ -19,11 +19,9 @@ public class LaFiestaAburridaEntornos {
         for (int i = 0; i < numero; i++) {
             System.out.print("Soy ");
             persona[i] = teclado.next();
-        }
-
-        for (int i = 0; i < numero; i++) {
             System.out.println("Hola "+persona[i]);
         }
+
     }
 
 }

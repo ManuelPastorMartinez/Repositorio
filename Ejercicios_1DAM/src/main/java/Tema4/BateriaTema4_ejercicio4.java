@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class BateriaTema4_ejercicio4 {
+    static Scanner teclado;
     public static void main(String[] args){
-        Scanner teclado = new Scanner(System.in);
         double recaudacion[] = recaudacion();
         System.out.println(Arrays.toString(recaudacion));
 
@@ -23,8 +23,15 @@ public class BateriaTema4_ejercicio4 {
             System.out.println("NO");
         }
     }
+
+    /**
+     * @author Manuel
+     * @version 1.0
+     * Método para introducir las ganancias diarias de un bar
+     * @return - vuelve las mayores ganancias de la semana
+     */
     public static double[] recaudacion(){
-        Scanner teclado = new Scanner(System.in);
+        teclado = new Scanner(System.in);
         double dias[] = new double[6];
         for (int i = 0; i < dias.length; i++) {
             System.out.println("Dia "+(i+1)+":");

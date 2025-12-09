@@ -5,17 +5,20 @@ import java.util.Scanner;
 public class BateriaTema4_ejercicio1 {
 
     public static void main(String[] args){
-
-        Scanner teclado = new Scanner(System.in);
-
-        System.out.println("Introduce un número");
-        int numero = teclado.nextInt();
-        int resultado = funcion(numero);
-        System.out.println(resultado);
     }
 
-    public static int funcion(int numero){
-
+    public static int funcion(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce un número");
+        int numero = teclado.nextInt();
         return numero*numero*numero;
+    }
+
+    public static boolean par(int numero){
+        if (numero%2==0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
