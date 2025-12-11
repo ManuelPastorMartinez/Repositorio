@@ -26,15 +26,16 @@ public class PartidoDeSquash {
         }else {
             // CÓDIGO PRINCIPAL AQUÍ
             for (int i = 0; i < cadena_puntuacion.length; i++) {
-                if (puntuacion_equipoA==9 || puntuacion_equipoB==9){
+                if (puntuacion_equipoA==9 && puntuacion_equipoA-1!=puntuacion_equipoB || puntuacion_equipoB==9 && puntuacion_equipoB-1 != puntuacion_equipoA){
                     break;
-                }
-                if (Arrays.asList(cadena_puntuacion[i]).contains("A")){
-                    puntuacion_equipoA++;
-                } else if (Arrays.asList(cadena_puntuacion[i]).contains("B")) {
-                    puntuacion_equipoB++;
-                }else if (Arrays.asList(cadena_puntuacion[i]).contains("F")){
+                } else if (Arrays.asList(cadena_puntuacion[i]).contains("F")) {
                     break;
+                } else {
+                    if (Arrays.asList(cadena_puntuacion[i]).contains("A")) {
+                        puntuacion_equipoA++;
+                    } else if (Arrays.asList(cadena_puntuacion[i]).contains("B")) {
+                        puntuacion_equipoB++;
+                    }
                 }
             }
             System.out.println(puntuacion_equipoA+"-"+puntuacion_equipoB);
