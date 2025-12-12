@@ -14,31 +14,44 @@ public class PartidoDeSquash {
 
     public static boolean casoDePrueba() {
 
-
         //leer caso de prueba
+        boolean saque = true;
         String puntuacion = teclado.nextLine().toUpperCase();
         String cadena_puntuacion[] = puntuacion.split("");
         int puntuacion_equipoA = 0;
         int puntuacion_equipoB = 0;
+        int ganador = 0;
+
+        final int SAQUE_EQUIPO_A = 0;
+        final int SAQUE_EQUIPO_B = 1;
 
         if (puntuacion.matches("F")) {
             return false;
         }else {
             // CÓDIGO PRINCIPAL AQUÍ
             for (int i = 0; i < cadena_puntuacion.length; i++) {
+
                 if (puntuacion_equipoA==9 && puntuacion_equipoA-1!=puntuacion_equipoB || puntuacion_equipoB==9 && puntuacion_equipoB-1 != puntuacion_equipoA){
                     break;
                 } else if (Arrays.asList(cadena_puntuacion[i]).contains("F")) {
                     break;
                 } else {
                     if (Arrays.asList(cadena_puntuacion[i]).contains("A")) {
-                        puntuacion_equipoA++;
-                    } else if (Arrays.asList(cadena_puntuacion[i]).contains("B")) {
-                        puntuacion_equipoB++;
+                        if (saque) {
+                            puntuacion_equipoA++;
+                        }
+                        saque = true;
+                    } else if (Arrays.asList(cadena_puntuacion[i]).contains("B")){
+                        if (!saque) {
+                            puntuacion_equipoB++;
+                        }
+                        saque = false;
                     }
                 }
+
             }
-            System.out.println(puntuacion_equipoA+"-"+puntuacion_equipoB);
+            System.out.print(puntuacion_equipoA+"-"+puntuacion_equipoB);
+            teclado.nextLine();
             return true;
         }
     } // casoDePrueba
