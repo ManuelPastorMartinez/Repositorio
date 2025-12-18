@@ -1,55 +1,54 @@
 package Tema4;
 
-import java.util.Arrays;
-
-public class PartidoDeSquash {
-
+public class PartidoDeSquash_bonito {
     static java.util.Scanner teclado;
 
     public static void main(String[] args) {
         teclado = new java.util.Scanner(System.in);
-        while (casoDePrueba()) {
+        System.out.println("****BIENVENIDO AL PARTIDO DE SQUASH****");
+        System.out.println("Introduce la puntuación de los sets");
+        while (puntuacionEquipos()) {
         }
-    } // main
+    }
 
-    public static boolean casoDePrueba() {
+    public static String PedirEntrada() {
+        return teclado.next().toUpperCase();
+    }
 
-        //leer caso de prueba
+    public static boolean puntuacionEquipos() {
+
         boolean saque = true;
-        String puntuacion = teclado.next().toUpperCase();
+        if (PedirEntrada().matches("[ABF]+")) {
+            String puntuacion = PedirEntrada();
+            if (puntuacion.equals("F")) {
+                System.out.println("0-0");
+                return false;
+            }
 
+            int puntuacion_equipoA = 0;
+            int puntuacion_equipoB = 0;
+            int sets_equipoA = 0;
+            int sets_equipoB = 0;
 
-        if (puntuacion.equals("F")) {
-            System.out.println("0-0");
-            return false;
-        }
-
-
-        int puntuacion_equipoA = 0;
-        int puntuacion_equipoB = 0;
-        int sets_equipoA = 0;
-        int sets_equipoB = 0;
-            // CÓDIGO PRINCIPAL AQUÍ
             for (int i = 0; i < puntuacion.length(); i++) {
-                char letra =puntuacion.charAt(i);
+
+                char letra = puntuacion.charAt(i);
+
                 if (letra == 'F') {
                     break;
                 }
 
-                if (letra =='A') {
+                if (letra == 'A') {
                     if (saque) {
                         puntuacion_equipoA++;
                     }
                     saque = true;
-                } else if (letra=='B'){
+                } else if (letra == 'B') {
                     if (!saque) {
                         puntuacion_equipoB++;
                     }
                     saque = false;
                 }
-
-
-
                 if (puntuacion_equipoA>=9 && puntuacion_equipoA-puntuacion_equipoB>1 || puntuacion_equipoB>=9 && puntuacion_equipoB-puntuacion_equipoA>1 ){
 
                     System.out.print(puntuacion_equipoA + "-" + puntuacion_equipoB);
@@ -71,14 +70,15 @@ public class PartidoDeSquash {
                 }
             }
 
-            if (puntuacion_equipoA !=0 || puntuacion_equipoB!=0){
-                if (sets_equipoA+sets_equipoB>0){
-                    System.out.print(" ");
-                }
-                System.out.print(puntuacion_equipoA+ "-" +puntuacion_equipoB);
-            }
-            System.out.println();
-            return true;
-    } // casoDePrueba
+        }else {
+            System.out.println("Introduce una entrada válida(A,B o F)");
+        }
+        return true;
+    }
+
+
+
+
 
 }
+
