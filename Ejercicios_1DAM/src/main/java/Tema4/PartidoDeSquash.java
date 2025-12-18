@@ -1,7 +1,5 @@
 package Tema4;
 
-import java.util.Arrays;
-
 public class PartidoDeSquash {
 
     static java.util.Scanner teclado;
@@ -15,70 +13,58 @@ public class PartidoDeSquash {
     public static boolean casoDePrueba() {
 
         //leer caso de prueba
-        boolean saque = true;
+        char saque = 'A';
+        boolean espacio = false;
+        boolean imprimir = true;
         String puntuacion = teclado.next().toUpperCase();
 
-
         if (puntuacion.equals("F")) {
-            System.out.println("0-0");
             return false;
         }
 
-
         int puntuacion_equipoA = 0;
         int puntuacion_equipoB = 0;
-        int sets_equipoA = 0;
-        int sets_equipoB = 0;
+
             // CÓDIGO PRINCIPAL AQUÍ
             for (int i = 0; i < puntuacion.length(); i++) {
                 char letra =puntuacion.charAt(i);
-                if (letra == 'F') {
+
+                if (letra =='F'&& imprimir) {
+                    if (espacio){
+                        System.out.print(" ");
+                    }
+                    System.out.print(puntuacion_equipoA+"-"+puntuacion_equipoB);
                     break;
+                }else {
+                    imprimir = true;
                 }
 
-                if (letra =='A') {
-                    if (saque) {
+                if (letra=='A') {
+                    if (saque=='A') {
                         puntuacion_equipoA++;
                     }
-                    saque = true;
+                    saque = 'A';
                 } else if (letra=='B'){
-                    if (!saque) {
+                    if (saque =='B' ) {
                         puntuacion_equipoB++;
                     }
-                    saque = false;
+                    saque = 'B';
                 }
-
-
 
                 if (puntuacion_equipoA>=9 && puntuacion_equipoA-puntuacion_equipoB>1 || puntuacion_equipoB>=9 && puntuacion_equipoB-puntuacion_equipoA>1 ){
-
-                    System.out.print(puntuacion_equipoA + "-" + puntuacion_equipoB);
-
-                    if (puntuacion_equipoA>puntuacion_equipoB){
-                        sets_equipoA++;
-                        saque=true;
-                    }else {
-                        sets_equipoB++;
-                        saque=false;
+                    if (espacio){
+                        System.out.print(" ");
                     }
-
+                    System.out.print(puntuacion_equipoA+"-"+puntuacion_equipoB);
                     puntuacion_equipoA=0;
                     puntuacion_equipoB=0;
-
-                    if (sets_equipoA==3 || sets_equipoB==3){
-                        break;
-                    }
+                    espacio=true;
+                    imprimir=false;
                 }
-            }
-
-            if (puntuacion_equipoA !=0 || puntuacion_equipoB!=0){
-                if (sets_equipoA+sets_equipoB>0){
-                    System.out.print(" ");
-                }
-                System.out.print(puntuacion_equipoA+ "-" +puntuacion_equipoB);
             }
             System.out.println();
             return true;
+
     } // casoDePrueba
 
 }
