@@ -17,5 +17,6 @@ class PartidoDeSquash_bonitoTest {
 
     @Test
     void puntuacionEquipos() {
+
     }
 }
